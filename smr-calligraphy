@@ -1,0 +1,73 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect with Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .social-container {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically on mobile */
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .social-link {
+      display: inline-block;
+      padding: 12px 25px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.2s, opacity 0.3s;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+    }
+    .social-link:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+    .youtube { background-color: #FF0000; }
+    .instagram { background-color: #E1306C; }
+    .whatsapp { background-color: #25D366; }
+  </style>
+</head>
+<body>
+  <h1>Connect with Me</h1>
+  <div class="social-container" id="socialLinks"></div>
+
+  <script>
+    // Social media links
+    const links = [
+      { name: "YouTube", url: "https://youtube.com/@smrcalligraphy-313?si=gFTMQ988Z2ojaEsI", class: "youtube" },
+      { name: "Instagram", url: "https://www.instagram.com/smr___calligraphy/profilecard/?igsh=MTN3NTVoMDk3bTIxYQ==", class: "instagram" },
+      { name: "WhatsApp", url: "https://chat.whatsapp.com/GWz9HMJAP6TGqxngnrDb5y", class: "whatsapp" }
+    ];
+
+    // Function to display social media buttons
+    function displaySocialLinks() {
+      const container = document.getElementById('socialLinks');
+
+      links.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.className = `social-link ${link.class}`;
+        a.textContent = link.name;
+        a.target = "_blank"; // Open link in new tab
+        container.appendChild(a);
+      });
+    }
+
+    // Call the function on page load
+    document.addEventListener("DOMContentLoaded", displaySocialLinks);
+  </script>
+</body>
+</html>
